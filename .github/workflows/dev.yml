@@ -9,3 +9,10 @@ jobs:
         name: skimsStandalone
         with:
           args: skims scan ./config.yml
+
+      - name: Upload Fluid Attacks Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fluid-attacks-results
+          path: Fluid-Attacks-Results.csv
